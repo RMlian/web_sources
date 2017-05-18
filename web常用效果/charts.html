@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>charts</title>
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<link href="style/form.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+<style>
+	.charts dl{display:none;}
+	.charts ul{border-radius:1px;  border:1px solid #A9A9A9; overflow:hidden; font-size:.7em;}
+	.charts li{line-height:38px; height:38px; width:100%; display:block; position:relative; float:left;}
+	.charts abbr{position:absolute; left:0; top:0; width:240px; text-align:right;}
+	.charts span{display:block; height:10px; margin-top:14px; float:left; position:relative; margin-left:250px;}
+	.charts span a{display:block; position:absolute; right:-110px; top:0; line-height:10px; width:100px;}
+	.chart1 span{background:#CDCDCD;}
+	.chart2 span{background:#189FD9;}
+	.chart3 span{background:#CDCD00;}
+	.chart4 span{background:#00CD00;}
+	.chart5 span{background:#1A6600;}
+	.chart6 span{background:#00698C;}
+	.chart1 a{color:#CDCDCD;}
+	.chart2 a{color:#189FD9;}
+	.chart3 a{color:#CDCD00;}
+	.chart4 a{color:#00CD00;}
+	.chart5 a{color:#1A6600;}
+	.chart6 a{color:#00698C;}
+	
+</style>
+<div class="main">
+<div class="main_title">
+      <h1 class="clearfix"><abbr data-m="1" data-l="0">热搜问题</abbr></h1>
+    </div>
+<div class="charts">
+	<dl>
+    	<dd title="如何快速缴纳保证金" data-num="289"></dd>
+        <dd title="如何快速缴何纳保快速缴纳保证金" data-num="180"></dd>
+        <dd title="如何快速快速快速缴纳保证金" data-num="1280"></dd>
+        <dd title="如何快速缴纳保证金" data-num="180"></dd>
+        <dd title="如何纳保快速缴纳保证金" data-num="239"></dd>
+        <dd title="如何何快速缴快速缴纳保证金" data-num="349"></dd>
+        <dd title="如何快速缴纳保证金" data-num="240"></dd>
+        <dd title="如何纳保快速缴何快纳保证金" data-num="160"></dd>
+    </dl>
+</div>
+</div>
+</body>
+</html>
+<script type="application/javascript">
+$(function(){
+	var $charts=$(".charts dl dd");
+	var _html="<ul>";
+	var _sum=0;
+	var len=6;
+	var speed=800;
+	$charts.each(function(index) {
+        _html+="<li class='chart"+getRandom(4)+"'><abbr>"+$(this).attr("title")+"</abbr><span><a>"+$(this).attr("data-num")+"</a></span></li>";
+		_sum+=parseInt($(this).attr("data-num"));
+    });
+	_html+="</ul>";
+	$(".charts").append(_html);
+	$(".charts li").each(function(index) {
+		var _width=parseInt($(this).children("span").children("a").html())/_sum*100;
+       $(this).children("span").animate({width:_width+"%",speed}); 
+    });
+});
+	//随机数
+function getRandom(n){
+        return Math.floor(Math.random()*n+1)
+}
+</script>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户中心--首页</title>
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/dialog.js"></script>
+<script src="js/main.js"></script>
+<!--HTML5元素支持-->
+<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<!--header start-->
+<header class="full"> 
+  <!--#include virtual="inc/header.html"-->
+  <nav class="navbg">
+    <ul class="nav w-cont">
+      <li class="active"><a href="index.shtml">用户中心首页</a></li>
+      <li><a href="project.shtml">项目信息</a></li>
+      <li><a href="bidroom.shtml">个人竞价室</a></li>
+      <li><a href="manage/manage.shtml">信息管理</a></li>
+      <li><a href="personinfo/profile.shtml">个人资料</a></li>
+      <li><a href="account/list.shtml">资金账户</a></li>
+      <li class="user_help" ><a href="###">我有问题</a></li>
+    </ul>
+  </nav>
+</header>
+<!--header end--> 
+<!--主体部分-->
+<article class="w-cont cl main"> 
+  <!--#include virtual="inc/left.html"--> 
+  <!--用户中心右侧主体内容start-->
+  <article class="fr user_r info_tab">
+    <section class="conlist_tab"> <span>关注列表</span> <span>信息列表</span> </section>
+    <div>
+      <p class="fl tagtype"><span>全部</span>  <span>已报名</span> <span>挂牌中</span> <span>竞价中</span> <span>专场活动</span> </p>
+      <p class="set_follow fr"><a href="personinfo/settings.shtml">设置关注</a></p>
+    </div>
+    <ul class="operating_line">
+      <li type="0">
+        <div class="pro_img"> <img src="" alt="" />
+          <p class="pro_state redbg">未开始</p>
+        </div>
+        <div class="pro_imgcon">
+          <h2>北交所奢侈品春季拍卖专场</h2>
+          <p class="pro_pricenum"> <span class="bluect">专场项目数：68</span> <span>保证金：6690.00</span> <span>可报项目数：5</span> </p>
+          <p class="target_info"> <span>起始日期：2016.08.09 - 2016.08.17</span> <span>北京产权交易</span> </p>
+        </div>
+        <span class="i_state bluebg">申请竞价</span> </li>
+      <li type="3">
+        <div class="pro_img"> <img src="" alt="" />
+          <p class="pro_state redbg">未开始</p>
+        </div>
+        <div class="pro_imgcon">
+          <h2>北交所奢侈品春季拍卖专场</h2>
+          <p class="pro_pricenum"> <span class="bluect">专场项目数：68</span> <span>保证金：6690.00</span> <span>可报项目数：5</span> </p>
+          <p class="target_info"> <span>起始日期：2016.08.09 - 2016.08.17</span> <span>北京产权交易</span> </p>
+        </div>
+        <span class="i_state bluebg">申请竞价</span> </li>
+      <li type="1">
+        <div class="pro_img"> <img src="" alt="" />
+          <p class="pro_state redbg">未开始</p>
+        </div>
+        <div class="pro_imgcon">
+          <h2>北交所奢侈品春季拍卖专场</h2>
+          <p class="pro_pricenum"> <span class="bluect">专场项目数：68</span> <span>保证金：6690.00</span> <span>可报项目数：5</span> </p>
+          <p class="target_info"> <span>起始日期：2016.08.09 - 2016.08.17</span> <span>北京产权交易</span> </p>
+        </div>
+        <span class="i_state bluebg">申请竞价</span> </li>
+      <li type="2">
+        <div class="pro_img"> <img src="" alt="" />
+          <p class="pro_state redbg">未开始</p>
+        </div>
+        <div class="pro_imgcon">
+          <h2>北交所奢侈品春季拍卖专场</h2>
+          <p class="pro_pricenum"> <span class="bluect">专场项目数：68</span> <span>保证金：6690.00</span> <span>可报项目数：5</span> </p>
+          <p class="target_info"> <span>起始日期：2016.08.09 - 2016.08.17</span> <span>北京产权交易</span> </p>
+        </div>
+        <span class="i_state bluebg">申请竞价</span> </li>
+      <li type="2">
+        <div class="pro_img"> <img src="" alt="" />
+          <p class="pro_state redbg">未开始</p>
+        </div>
+        <div class="pro_imgcon">
+          <h2>北交所奢侈品春季拍卖专场</h2>
+          <p class="pro_pricenum"> <span class="bluect">专场项目数：68</span> <span>保证金：6690.00</span> <span>可报项目数：5</span> </p>
+          <p class="target_info"> <span>起始日期：2016.08.09 - 2016.08.17</span> <span>北京产权交易</span> </p>
+        </div>
+        <span class="i_state bluebg">申请竞价</span> </li>
+    </ul>
+  </article>
+  <!--用户中心右侧主体内容end--> 
+</article>
+<script>
+	var $ul=$(".operating_line li");
+	$(".tagtype span").each(function(index) {
+        $(this).bind("click",function(){
+			show(String(index));
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+    });
+	$ul.each(function(index) {
+         $(this).addClass("type"+index); 
+    });	
+	function show(index){
+		$ul.hide();
+		$ul.each(function() {
+            if($(this).attr("type")==index){
+				$(this).show();	
+			}
+			if(index=="0"){
+				$(this).show();	
+			}
+        });	
+	}
+</script>
+<!--#include virtual="inc/footer.html"-->
+</body>
+</html>
